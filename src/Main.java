@@ -11,6 +11,7 @@ public class Main {
 		 Only class instantiation, variable declaration and assignment, and method calling is permitted in the main class/function
 		You make the rules for your game, but it must be dice based and follow the above rules.*/
 		Dice diceRoll = new Dice();
+		
 
 	
 	}
