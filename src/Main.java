@@ -1,6 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-
 	public static void main(String[] args) 
 	{
 		/*Dice Game Specs
@@ -11,11 +12,12 @@ public class Main {
 		 Game must include multiplayer
 		 Only class instantiation, variable declaration and assignment, and method calling is permitted in the main class/function
 		You make the rules for your game, but it must be dice based and follow the above rules.*/
-	
-		
-		
-
-	
+		//add loop for numbering player whos entering name next
+		List<Player> playersadded = new ArrayList<Player>();
+		GameBoard game = new GameBoard();
+		game.GameSetUp();
+		playersadded=game.players;
+		game.FullTurn(playersadded);
 	}
 
 }

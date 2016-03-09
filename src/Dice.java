@@ -9,7 +9,7 @@ public class Dice {
 		public int RollDice(int NumberOfSides){
 			numberOfSides = NumberOfSides;
 			diceOutCome = rand.nextInt(NumberOfSides) + 1;
-			return diceOutCome;
+			return diceOutCome*10;
 		}
 		
 }

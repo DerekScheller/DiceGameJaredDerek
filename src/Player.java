@@ -1,7 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
-import java.util.List;
-public class Player {
+public class Player{
 	Scanner scanner = new Scanner(System.in);
 	int playerTotalScore;
 	String name;
@@ -11,5 +9,4 @@ public Player(String Name, String PlayerType){
 	playerType = PlayerType;
 	playerTotalScore = 0;
 }
-
 }
