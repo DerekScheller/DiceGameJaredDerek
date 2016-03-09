@@ -61,8 +61,7 @@ public class GameBoard{
 				System.out.println("Your answer was incorrect! Your score will remain the same at " + player.playerTotalScore + ".");
 				youwin=player.playerTotalScore;
 			} 	
-
-			}
+		}
 		}
 	}
 }
