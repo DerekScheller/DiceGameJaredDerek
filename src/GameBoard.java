@@ -41,15 +41,34 @@ public class GameBoard{
 		while(youwin<=100)
 		{
 		for (Player player : players){
+			DifficultySelection picked = new DifficultySelection();
 			System.out.println("It is " + player.name + "'s turn.");
 			System.out.println("Your current  score is: " + player.playerTotalScore);
-			DifficultySelection picked = new DifficultySelection();
-			picked.PickYourDice();
+			if(player.playerType=="AI")
+			{
+			picked.PickYourDiceAI();
+			int diceSelector= picked.selecteddice;
+			int answerAI = diceRoll.RollDice(2);
+			if(answerAI==0)
+			{
+				answer=true;
+			}
+			else
+			{
+				answer=false;
+			}
+			int playerDiceRoll = diceRoll.RollDice(diceSelector);
+			System.out.println("You rolled a: " + playerDiceRoll);
+			}
+			else
+			{
+			picked.PickYourDiceHuman();
 			int diceSelector= picked.selecteddice;
 			picked.difficultyselection();
 			boolean answer = picked.answertrueorfalse;
 			int playerDiceRoll = diceRoll.RollDice(diceSelector);
 			System.out.println("You rolled a: " + playerDiceRoll);
+			}
 			if (answer == true) {
 				player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
 				System.out.println("You answered correctly! Your new score is " + player.playerTotalScore + ".");
