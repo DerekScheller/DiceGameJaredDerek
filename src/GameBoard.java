@@ -35,6 +35,7 @@ public class GameBoard {
 					int diceSelector = 	20;
 					int playerDiceRoll = diceRoll.RollDice(diceSelector);
 					System.out.println("You rolled a: " + playerDiceRoll);
+					answer = question.questionSequence(Question Difficulty);
 					if (answer == true){
 						player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
 					}
