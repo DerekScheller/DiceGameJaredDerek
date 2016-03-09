@@ -45,6 +45,11 @@ public class GameBoard {
 			if (answer == true) 
 			{
 				player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
+				System.out.println("You answered correctly! Your new score is " + player.playerTotalScore + ".");
+			}
+			else
+			{
+				System.out.println("Your answer was incorrect! Your score will remain the same at " + player.playerTotalScore + ".");
 			}
 			if (player.playerTotalScore >= 100) 
 			{
