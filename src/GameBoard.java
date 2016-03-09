@@ -49,14 +49,14 @@ public class GameBoard{
 			picked.PickYourDiceAI();
 			int diceSelector= picked.selecteddice;
 			int answerAI = diceRoll.RollDice(2);
-			if(answerAI==0)
-			{
-				answer=true;
-			}
-			else
-			{
-				answer=false;
-			}
+				if(answerAI==1)
+				{
+					answer=true;
+				}
+				else
+				{
+					answer=false;
+				}
 			int playerDiceRoll = diceRoll.RollDice(diceSelector);
 			System.out.println("You rolled a: " + playerDiceRoll);
 			}
@@ -65,7 +65,7 @@ public class GameBoard{
 			picked.PickYourDiceHuman();
 			int diceSelector= picked.selecteddice;
 			picked.difficultyselection();
-			boolean answer = picked.answertrueorfalse;
+			answer = picked.answertrueorfalse;
 			int playerDiceRoll = diceRoll.RollDice(diceSelector);
 			System.out.println("You rolled a: " + playerDiceRoll);
 			}
