@@ -1,7 +1,8 @@
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		/*Dice Game Specs
 		 Game must be more than just war with dice
 		 Game must use OOP programming (classes and instantiation)
