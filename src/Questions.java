@@ -71,7 +71,7 @@ boolean answerReal;
 		int selectQuestion = rndQuestion.RollDice(4);
 		switch (selectQuestion){
 		case 0 :
-			System.out.println("");
+			System.out.println("Lightning never strikes in the same place twice?");
 			return questionAnswer;
 		case 1 :
 			System.out.println("");
