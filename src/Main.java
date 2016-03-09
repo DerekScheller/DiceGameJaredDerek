@@ -1,4 +1,5 @@
-
+import java.util.List;
+import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) 
@@ -11,6 +12,8 @@ public class Main {
 		 Game must include multiplayer
 		 Only class instantiation, variable declaration and assignment, and method calling is permitted in the main class/function
 		You make the rules for your game, but it must be dice based and follow the above rules.*/
+		GameBoard gameTime = new GameBoard();
+		gameTime.FullTurn(gameTime.GameSetUp());
 	
 		
 		

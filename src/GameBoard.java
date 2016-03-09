@@ -6,14 +6,14 @@ public class GameBoard {
 	int boardWinLimit = 100;
 	Dice diceRoll = new Dice();
 	Scanner scanner = new Scanner(System.in);
-	List<Player> players = new ArrayList<>();
+	List<Player> listOfPlayers = new ArrayList<Player>();
 	boolean answer;
 	
 
 	public GameBoard() {
 	}
 
-	public void GameSetUp() {
+	public List<Player> GameSetUp() {
 		System.out.println("How many people will be playing today?");
 		int totalOfPlayers = scanner.nextInt();
 		for (int i = 0; i < totalOfPlayers; i++) {
@@ -27,12 +27,16 @@ public class GameBoard {
 			{
 				inputPlayerType = "AI";
 			}
-			players.add(new Player(inputName, inputPlayerType));
+			Player player = new Player();
+			player.setName(inputName);
+			player.setType(inputPlayerType);
+			listOfPlayers.add(player);
 		}
+		return listOfPlayers;
 	}
 
-	public void FullTurn(List<Player> players) {
-		for (Player player : players) {
+	public void FullTurn(List<Player> listOfPlayers) {
+		for (Player player : listOfPlayers) {
 			System.out.println("It is " + player + "'s turn.");
 			System.out.println("Your current  score is: " + player.playerTotalScore);
 			DifficultySelection picked = new DifficultySelection();
