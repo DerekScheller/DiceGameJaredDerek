@@ -8,41 +8,49 @@ public class GameBoard {
 	Scanner scanner = new Scanner(System.in);
 	List<Player> players = new ArrayList<>();
 	boolean answer;
+	
 
 	public GameBoard() {
 	}
 
-	public void GameSetUp(){
+	public void GameSetUp() {
 		System.out.println("How many people will be playing today?");
 		int totalOfPlayers = scanner.nextInt();
-		for(int i=0; i<totalOfPlayers; i++){
+		for (int i = 0; i < totalOfPlayers; i++) {
 			System.out.println("What is this players name?");
 			String inputName = scanner.next();
 			System.out.println("Is this player human? 'Y' or 'N'");
 			String inputPlayerType = scanner.next();
-			if(inputPlayerType.equalsIgnoreCase("Y")){
+			if (inputPlayerType.equalsIgnoreCase("Y")) {
 				inputPlayerType = "Human";
-			}else{
+			} else
+			{
 				inputPlayerType = "AI";
 			}
 			players.add(new Player(inputName, inputPlayerType));
 		}
 	}
-		public void FullTurn(List<Player> players){
-				for(Player player : players){
-					System.out.println("It is " + player + "'s turn.");
-					System.out.println("Your current  score is: " + player.playerTotalScore);
-					int diceSelector = 	20;
-					int playerDiceRoll = diceRoll.RollDice(diceSelector);
-					System.out.println("You rolled a: " + playerDiceRoll);
-					answer = question.questionSequence(Question Difficulty);
-					if (answer == true){
-						player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
-					}
-				if (player.playerTotalScore >= 100){
+
+	public void FullTurn(List<Player> players) {
+		for (Player player : players) {
+			System.out.println("It is " + player + "'s turn.");
+			System.out.println("Your current  score is: " + player.playerTotalScore);
+			DifficultySelection picked = new DifficultySelection();
+			picked.PickYourDice();
+			int diceSelector= picked.selecteddice;
+			picked.difficultyselection();
+			boolean answer = picked.answertrueorfalse;
+			int playerDiceRoll = diceRoll.RollDice(diceSelector);
+			System.out.println("You rolled a: " + playerDiceRoll);
+			if (answer == true) 
+			{
+				player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
+			}
+			if (player.playerTotalScore >= 100) 
+			{
 				System.out.println("You Win: " + player.name);
 				break;
-				}
 			}
 		}
+	}
 }
