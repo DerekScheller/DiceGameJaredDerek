@@ -50,8 +50,7 @@ public class GameBoard{
 			boolean answer = picked.answertrueorfalse;
 			int playerDiceRoll = diceRoll.RollDice(diceSelector);
 			System.out.println("You rolled a: " + playerDiceRoll);
-			if (answer == true) 
-			{
+			if (answer == true) {
 				player.playerTotalScore = player.playerTotalScore + playerDiceRoll;
 				System.out.println("You answered correctly! Your new score is " + player.playerTotalScore + ".");
 				youwin=player.playerTotalScore;
@@ -60,9 +59,12 @@ public class GameBoard{
 			{
 				System.out.println("Your answer was incorrect! Your score will remain the same at " + player.playerTotalScore + ".");
 				youwin=player.playerTotalScore;
-			} 	
-
+			}
+			if (player.playerTotalScore >=100){
+				System.out.println(player.name + " WINS!!");
+			break; 
 			}
 		}
 	}
+}
 }
