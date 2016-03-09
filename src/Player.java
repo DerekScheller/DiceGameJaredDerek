@@ -1,22 +1,12 @@
-import java.util.Arrays;
-import java.util.List;
-public class Player {
-	int playerTotalScore = 0;
+import java.util.Scanner;
+public class Player{
+	Scanner scanner = new Scanner(System.in);
+	int playerTotalScore;
 	String name;
 	String playerType;
-	
-public String getName(){
-	return name;
+public Player(String Name, String PlayerType){
+	name = Name;
+	playerType = PlayerType;
+	playerTotalScore = 0;
 }
-public void setName(String name) {
-    this.name = name;
-}
-
-public  String getType() {
-    return playerType;
-}
-
-public void setType(String pslayerType) {
-    this.playerType = playerType;
-}   
 }
