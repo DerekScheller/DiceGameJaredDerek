@@ -89,6 +89,7 @@ public class GameBoard{
 				youwin=player.playerTotalScore;
 			}
 			}
+				System.out.println("");
 			if (player.playerTotalScore >=100){
 				System.out.println(player.name + " WINS!!");
 			break; 
