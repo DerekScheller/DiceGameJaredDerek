@@ -9,4 +9,8 @@ public Player(String Name, String PlayerType){
 	playerType = PlayerType;
 	playerTotalScore = 0;
 }
+public void NamingPlayer()
+{
+	
+}
 }
